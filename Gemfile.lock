@@ -85,6 +85,8 @@ GEM
     erubis (2.7.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
+    factory_girl (4.1.0)
+      activesupport (>= 3.0.0)
     ffi (1.0.11)
     forem-redcarpet (1.0.0)
       pygments.rb (= 0.2.4)
@@ -204,6 +206,7 @@ DEPENDENCIES
   awesome_print
   capybara (= 2.0.2)
   coffee-rails (~> 3.2.1)
+  factory_girl (= 4.1.0)
   forem!
   jquery-rails
   kaminari (= 0.14.1)

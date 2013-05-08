@@ -64,5 +64,12 @@ module HostedForums
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+
+    config.to_prepare do
+        extenders_path = Rails.application.root + "app/extenders/**/*.rb" 
+        Dir.glob(extenders_path) do |file|
+            Rails.configuration.cache_classes ? require(file) : load(file) 
+        end
+    end
   end
 end
