@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130507225951) do
+ActiveRecord::Schema.define(:version => 20130508211939) do
 
   create_table "forem_categories", :force => true do |t|
     t.string   "name",       :null => false
@@ -92,6 +92,15 @@ ActiveRecord::Schema.define(:version => 20130507225951) do
   add_index "forem_topics", ["slug"], :name => "index_forem_topics_on_slug", :unique => true
   add_index "forem_topics", ["state"], :name => "index_forem_topics_on_state"
   add_index "forem_topics", ["user_id"], :name => "index_forem_topics_on_user_id"
+
+  create_table "forem_user_settings", :force => true do |t|
+    t.boolean  "forem_admin",          :default => false
+    t.boolean  "forem_auto_subscribe", :default => true
+    t.string   "forem_state",          :default => "pending_review"
+    t.integer  "user_id"
+    t.datetime "created_at",                                         :null => false
+    t.datetime "updated_at",                                         :null => false
+  end
 
   create_table "forem_views", :force => true do |t|
     t.integer  "user_id"
